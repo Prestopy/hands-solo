@@ -1,8 +1,11 @@
 package frc.robot;
 
 import static edu.wpi.first.units.Units.Degrees;
-import static frc.robot.RobotContainer.ARM;
+import static frc.robot.RobotContainer.baseArm;
+import static frc.robot.RobotContainer.distalArm;
+import static frc.robot.RobotContainer.proximalArm;
 
+import edu.wpi.first.units.measure.Angle;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
@@ -16,30 +19,11 @@ public class SimulationControls {
     private static Trigger button2 = HID.button(2);
     private static Trigger button3 = HID.button(3);
 
-    private static int j1 = 0;
-    private static int j2 = 0;
-    private static int j3 = 0;
+    private static Angle j1 = Degrees.of(0.0);
+    private static Angle j2 = Degrees.of(0.0);
+    private static Angle j3 = Degrees.of(0.0);
 
     public static void bind() {
-        button1.whileTrue(
-            new InstantCommand(() -> {
-                ARM.setProximalJointAngle(j1).schedule();
-                j1 += 5;
-            }).repeatedly()
-        );
-
-        button2.whileTrue(
-            new InstantCommand(() -> {
-                ARM.setDistalJointAngle(j2).schedule();
-                j2 += 5;
-            }).repeatedly()
-        );
-
-        button3.whileTrue(
-            new InstantCommand(() -> {
-                ARM.setWristJointAngle(j3).schedule();
-                j3 += 5;
-            }).repeatedly()
-        );
+        
     }
 }
