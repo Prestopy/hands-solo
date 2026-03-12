@@ -23,13 +23,13 @@ public class RobotContainer {
 
   public RobotContainer() {
     if (RobotBase.isReal()) {
-      baseArm = new Arm(new ArmIOReal(ArmConstants.Configurations.BASE_ARM));
+      baseArm     = new Arm(new ArmIOReal(ArmConstants.Configurations.BASE_ARM));
       proximalArm = new Arm(new ArmIOReal(ArmConstants.Configurations.PROXIMAL_ARM));
-      distalArm = new Arm(new ArmIOReal(ArmConstants.Configurations.DISTAL_ARM));
+      distalArm   = new Arm(new ArmIOReal(ArmConstants.Configurations.DISTAL_ARM));
     } else {
-      baseArm = new Arm(new ArmIOSim(ArmConstants.Configurations.BASE_ARM));
+      baseArm     = new Arm(new ArmIOSim(ArmConstants.Configurations.BASE_ARM));
       proximalArm = new Arm(new ArmIOSim(ArmConstants.Configurations.PROXIMAL_ARM));
-      distalArm = new Arm(new ArmIOSim(ArmConstants.Configurations.DISTAL_ARM));
+      distalArm   = new Arm(new ArmIOSim(ArmConstants.Configurations.DISTAL_ARM));
     }
 
     configureBindings();
