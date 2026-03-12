@@ -9,7 +9,7 @@ import frc.robot.MotorConfiguration;
 
 public class BaseConstants {
     public class Configurations {
-        public static final MotorConfiguration BASE_ARM = new MotorConfiguration(
+        public static final MotorConfiguration BASE = new MotorConfiguration(
             16,
 
             Amps.of(30), // Stator limit
