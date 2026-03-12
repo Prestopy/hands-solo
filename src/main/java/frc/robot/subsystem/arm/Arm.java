@@ -15,7 +15,7 @@ public class Arm extends SubsystemBase {
         return runEnd(
             () -> io.moveTo(angle),
             () -> io.stop()
-        );
+        ).until(() -> io.getAngle().isNear(angle, ArmConstants.SETPOINT_TOLERANCE));
     }
 
     public Command stop() {

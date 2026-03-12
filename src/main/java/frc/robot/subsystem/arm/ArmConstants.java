@@ -5,9 +5,11 @@ import static edu.wpi.first.units.Units.*;
 import com.ctre.phoenix6.signals.GravityTypeValue;
 import com.ctre.phoenix6.signals.InvertedValue;
 
+import edu.wpi.first.units.measure.Angle;
 import frc.robot.MotorConfiguration;
 
 public class ArmConstants {
+    public static final Angle SETPOINT_TOLERANCE = Degrees.of(2.0);
     public class Configurations {
         public static final MotorConfiguration BASE_ARM = new MotorConfiguration(
             16,
