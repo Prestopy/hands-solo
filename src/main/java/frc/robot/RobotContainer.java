@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.RobotBase;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import frc.robot.subsystem.arm.Arm;
+import frc.robot.subsystem.arm.ArmConstants;
 import frc.robot.subsystem.arm.ArmIOReal;
 import frc.robot.subsystem.arm.ArmIOSim;
 import frc.robot.subsystem.base.Base;
@@ -23,8 +24,12 @@ public class RobotContainer {
   public RobotContainer() {
     if (RobotBase.isReal()) {
       baseArm = new Arm(new ArmIOReal(ArmConstants.Configurations.BASE_ARM));
+      proximalArm = new Arm(new ArmIOReal(ArmConstants.Configurations.PROXIMAL_ARM));
+      distalArm = new Arm(new ArmIOReal(ArmConstants.Configurations.DISTAL_ARM));
     } else {
       baseArm = new Arm(new ArmIOSim(ArmConstants.Configurations.BASE_ARM));
+      proximalArm = new Arm(new ArmIOSim(ArmConstants.Configurations.PROXIMAL_ARM));
+      distalArm = new Arm(new ArmIOSim(ArmConstants.Configurations.DISTAL_ARM));
     }
 
     configureBindings();
